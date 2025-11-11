@@ -5,7 +5,9 @@ export default function Dashboard() {
   const [subscription, setSubscription] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get("/my-subscription").then((res) => setSubscription(res.data));
+    axiosInstance.get("/my-subscription").then((res) => {
+        console.log('res',res)
+        setSubscription(res.data.data)});
   }, []);
 
   return (

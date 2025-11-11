@@ -9,7 +9,9 @@ export default function Plans() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axiosInstance.get("/plans").then((res) => setPlans(res.data));
+    axiosInstance.get("/plans").then((res) => {
+        console.log('plans',res)
+        setPlans(res.data.data)});
   }, []);
 
   const handleSubscribe = async (planId) => {
